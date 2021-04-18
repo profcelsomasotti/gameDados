@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Dados</title>
+    <style>
+        h2 {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        #cJogador {
+            border: 1px #AAA solid;
+        }
+        
+        #cComputador {
+            border: 1px #AAA solid;
+        }
+        
+        #resultJ {
+            text-align: center;
+            height: 2em;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        #resultC {
+            text-align: center;
+            height: 2em;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .confG {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h2>Jogo de Dados</h2>
+
+        <br>
+        <canvas id="cJogador" width="200" height="200"></canvas> &nbsp;
+        <canvas id="cComputador" width="200" height="200"></canvas>
+        <table width="452">
+            <tr>
+                <td class="confG" width="226">Humano</td>
+                <td class="confG" width="226">Computador</td>
+            </tr>
+            <tr>
+                <td id="resultJ" width="226"></td>
+                <td id="resultC" width="226"></td>
+            </tr>
+        </table>
+        <br><button id="jogar" onclick="lancaDado();mudaButton();">Jogue o dado!</button> <button id="novoJogo" onclick="window.location='gameDados.html';" style="display: none;">Novo Jogo</button>
+    </center>
+
+
+
+    <script>
+        function lancaDado() {
+            var sorteado = Math.round(Math.random() * 7);
+            var JogNum = 0;
+            if (sorteado == 0) {
+                JogNum = 1;
+            } else if (sorteado > 6) {
+                JogNum = 6;
+            } else {
+                JogNum = sorteado;
+            }
+
+            var ctxJ = document.getElementById("cJogador").getContext("2d");
+            ctxJ.beginPath();
+            ctxJ.lineWidth = "5";
+            ctxJ.strokeStyle = "blue";
+            ctxJ.rect(20, 20, 160, 160);
+            ctxJ.stroke();
+
+            if (JogNum == 1) {
+                var ctxJ = document.getElementById("cJogador").getContext("2d");
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+
+                ctxJ.arc(100, 100, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+            } else if (JogNum == 2) {
+                var ctxJ = document.getElementById("cJogador").getContext("2d");
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(60, 60, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(140, 140, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+            } else if (JogNum == 3) {
+
+                var ctxJ = document.getElementById("cJogador").getContext("2d");
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(60, 60, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(100, 100, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(140, 140, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+            } else if (JogNum == 4) {
+
+                var ctxJ = document.getElementById("cJogador").getContext("2d");
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(60, 60, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(140, 60, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(140, 140, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(60, 140, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+            } else if (JogNum == 5) {
+
+                var ctxJ = document.getElementById("cJogador").getContext("2d");
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(60, 60, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(140, 60, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(100, 100, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(140, 140, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(60, 140, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+
+            } else if (JogNum == 6) {
+
+                var ctxJ = document.getElementById("cJogador").getContext("2d");
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(60, 60, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(140, 60, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(100, 60, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(140, 140, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(60, 140, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+                ctxJ.beginPath();
+                ctxJ.lineWidth = "15";
+                ctxJ.strokeStyle = "blue";
+                ctxJ.arc(100, 140, 5, 0, 2 * Math.PI);
+                ctxJ.stroke();
+
+                ctxJ.fillStyle = "blue";
+                ctxJ.fill();
+
+            }
+
+
+            /* ----- COMPUTDOR -----------------------------------*/
+
+
+            var sorteado2 = Math.round(Math.random() * 7);
+            var CompNum = 0;
+            if (sorteado2 == 0) {
+                CompNum = 1;
+            } else if (sorteado2 > 6) {
+                CompNum = 6;
+            } else {
+                CompNum = sorteado2;
+            }
+
+
+
+            var c2 = document.getElementById("cComputador");
+            var ctxC = c2.getContext("2d");
+            ctxC.beginPath();
+            ctxC.lineWidth = "6";
+            ctxC.strokeStyle = "red";
+            ctxC.rect(20, 20, 160, 160);
+            ctxC.stroke();
+
+
+            if (CompNum == 1) {
+                var ctxC = document.getElementById("cComputador").getContext("2d");
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+
+                ctxC.arc(100, 100, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+            } else if (CompNum == 2) {
+                var ctxC = document.getElementById("cComputador").getContext("2d");
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(60, 60, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(140, 140, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+            } else if (CompNum == 3) {
+
+                var ctxC = document.getElementById("cComputador").getContext("2d");
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(60, 60, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(100, 100, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(140, 140, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+            } else if (CompNum == 4) {
+
+                var ctxC = document.getElementById("cComputador").getContext("2d");
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(60, 60, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(140, 60, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(140, 140, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(60, 140, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+            } else if (CompNum == 5) {
+
+                var ctxC = document.getElementById("cComputador").getContext("2d");
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(60, 60, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(140, 60, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(100, 100, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(140, 140, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(60, 140, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+
+            } else if (CompNum == 6) {
+
+                var ctxC = document.getElementById("cComputador").getContext("2d");
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(60, 60, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(140, 60, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(100, 60, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(140, 140, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(60, 140, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+                ctxC.beginPath();
+                ctxC.lineWidth = "15";
+                ctxC.strokeStyle = "red";
+                ctxC.arc(100, 140, 5, 0, 2 * Math.PI);
+                ctxC.stroke();
+
+                ctxC.fillStyle = "red";
+                ctxC.fill();
+
+            }
+
+
+            if (CompNum == JogNum) {
+                var j = document.getElementById("resultJ");
+                j.style.backgroundColor = "#FFF8DC";
+                j.innerHTML = "Empate";
+
+                var j = document.getElementById("resultC");
+                j.style.backgroundColor = "#FFF8DC";
+                j.innerHTML = "Empate";
+
+            } else if (CompNum > JogNum) {
+                var j = document.getElementById("resultJ");
+                j.style.backgroundColor = "#F08080";
+                j.innerHTML = "Perdeu";
+
+                var j = document.getElementById("resultC");
+                j.style.backgroundColor = "#CFC";
+                j.innerHTML = "Ganhou";
+
+            } else {
+                var j = document.getElementById("resultJ");
+                j.style.backgroundColor = "#CFC";
+                j.innerHTML = "Ganhou";
+
+                var j = document.getElementById("resultC");
+                j.style.backgroundColor = "#F08080";
+                j.innerHTML = "Perdeu";
+
+            }
+        }
+
+        function mudaButton() {
+            document.getElementById("novoJogo").style.display = 'block';
+            document.getElementById("jogar").style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
